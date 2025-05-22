@@ -1,28 +1,145 @@
-/* styles.css */
-body {
-    /* Set a gradient background from purple to teal */
-    background: linear-gradient(to right, #6a3093, #a044ff, #5f2c82, #49a09d);
-    font-family: Arial, sans-serif;
-    /* Sets a clean, modern font for the body text */
-    color: white;
-    /* Sets the text color to white for better contrast */
+/* Modern Professional Design */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #2196f3;
+    --accent-color: #f44336;
+    --text-color: #333333;
+    --background-color: #e3f2fd;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --content-bg: #ffffff;
+}
+
+* {
     margin: 0;
-    /* Removes default margin */
     padding: 0;
-    /* Removes default padding */
-    display: flex;
-    /* Enables flexbox layout */
-    justify-content: center;
-    /* Centers content horizontally */
-    align-items: center;
-    /* Centers content vertically */
-    height: 100vh;
-    /* Makes the body take the full height of the viewport */
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    color: white;
+    box-shadow: var(--box-shadow);
 }
 
 h1 {
-    font-size: 2em;
-    /* Sets the size of the header text */
-    text-align: center;
-    /* Centers the header text */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #e3f2fd;
+}
+
+.experiment-section {
+    margin-bottom: 3rem;
+    background: var(--content-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+.experiment-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.content-box {
+    background: rgba(33, 150, 243, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.details-list {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.details-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-color);
+}
+
+.details-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .experiment-section {
+        padding: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experiment-section {
+    animation: fadeIn 0.5s ease-out forwards;
 }
